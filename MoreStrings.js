@@ -49,17 +49,33 @@ const template = `"your template string" ➞ "Their names were:  ${a},  ${b}  an
 
 console.log("7)", template)
 
+
 // 8. Create a variable that contains the string "whatTheOMGnicCAGEtadahheHIDINGinHere". Console log the index of where Nic Cage is hiding. 
 
 const string = "whatTheOMGnicCAGEtadahheHIDINGinHere"
+const nc = "Nic Cage"
+const stringNicC  = string.replace(string.slice(string.indexOf("nic"), string.indexOf("tad")), nc)
+// console.log(stringNicC)
+const nivIndex = stringNicC.indexOf(nc)
+console.log("8.1):", nivIndex )
+
+//or
+
 const positionFirstNic = string.toLocaleLowerCase().indexOf("nic")
 const positionLastNic = string.toLocaleLowerCase().indexOf("cage")
+
 const stringNic = string.slice(positionFirstNic, positionLastNic)
+
+
 const positionFirstCage = string.toLocaleLowerCase().indexOf("cage")
-const positionLastCage = string.toLocaleLowerCase().indexOf("cage") + 4
+const positionLastCage = positionFirstCage + 4
+
 const stringCage = string.slice(positionFirstCage, positionLastCage).toLowerCase()
-const stringNew = `${string.slice(0, positionLastNic)} ${stringNic[0].toLocaleUpperCase() + stringNic.slice(1)} ${stringCage[0].toLocaleUpperCase() + stringCage.slice(1)} ${string.slice(positionLastCage)}`
+console.log(positionFirstCage, positionLastCage, stringCage)
+
+const stringNew = `${string.slice(0, positionFirstNic)} ${stringNic[0].toLocaleUpperCase() + stringNic.slice(1)} ${stringCage[0].toLocaleUpperCase() + stringCage.slice(1)} ${string.slice(positionLastCage)}`
 console.log("8)", stringNew.indexOf("Nic Cage"))
+console.log(stringNew)
 
 // 9. What is the difference between substr(), substring(), and slice()?
 const stringSlice = string.slice(string.toLocaleLowerCase().indexOf("nic"), -10)
