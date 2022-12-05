@@ -54,10 +54,9 @@ console.log("7)", template)
 
 const string = "whatTheOMGnicCAGEtadahheHIDINGinHere"
 const nc = "Nic Cage"
-const stringNicC  = string.replace(string.slice(string.indexOf("nic"), string.indexOf("tad")), nc)
-// console.log(stringNicC)
-const nivIndex = stringNicC.indexOf(nc)
-console.log("8.1):", nivIndex )
+const findPosition = string.toLowerCase().indexOf(nc.toLowerCase().replace(" ", ""))
+console.log(findPosition)
+
 
 //or
 
